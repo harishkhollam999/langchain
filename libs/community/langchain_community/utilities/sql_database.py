@@ -105,15 +105,15 @@ class SQLDatabase:
             )
 
         self._max_string_length = max_string_length
-
-        self._metadata = metadata or MetaData()
+        self._metadata = MetaData()
+        # self._metadata = metadata or MetaData()
         # including view support if view_support = true
-        self._metadata.reflect(
-            views=view_support,
-            bind=self._engine,
-            only=list(self._usable_tables),
-            schema=self._schema,
-        )
+        # self._metadata.reflect(
+        #     views=view_support,
+        #     bind=self._engine,
+        #     only=list(self._usable_tables),
+        #     schema=self._schema,
+        # )
 
     @classmethod
     def from_uri(
